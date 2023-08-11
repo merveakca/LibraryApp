@@ -19,7 +19,6 @@ namespace LibraryApp
             {
                 MessageBox.Show("Yazar ve Kitap adý boþ býrakýlamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void btnMemberCreate_Click(object sender, EventArgs e)
@@ -57,7 +56,6 @@ namespace LibraryApp
                 dgMember.ReadOnly = true;
                 btnEdit.Text = "Düzenle";
             }
-           
         }
     }
 }
