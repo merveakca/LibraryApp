@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgList = new DataGridView();
+            dgBookList = new DataGridView();
             index = new DataGridViewTextBoxColumn();
             BookName = new DataGridViewTextBoxColumn();
             WriterName = new DataGridViewTextBoxColumn();
@@ -38,7 +38,7 @@
             label1 = new Label();
             txtCreatedWriter = new TextBox();
             txtCreatedBook = new TextBox();
-            btnCreate = new Button();
+            btnCreateBook = new Button();
             groupBox2 = new GroupBox();
             dataGridView1 = new DataGridView();
             Index1 = new DataGridViewTextBoxColumn();
@@ -56,33 +56,33 @@
             txtPhoneNumber = new TextBox();
             txtAdress = new TextBox();
             txtMemberName = new TextBox();
-            dgMember = new DataGridView();
+            dgMemberList = new DataGridView();
             index2 = new DataGridViewTextBoxColumn();
             MemberName = new DataGridViewTextBoxColumn();
             PhoneNumber = new DataGridViewTextBoxColumn();
             Adress = new DataGridViewTextBoxColumn();
             btnEdit = new Button();
-            button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgList).BeginInit();
+            btnDelete = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgBookList).BeginInit();
             gbCreated.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             gbMember.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgMember).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgMemberList).BeginInit();
             SuspendLayout();
             // 
-            // dgList
+            // dgBookList
             // 
-            dgList.AllowUserToAddRows = false;
-            dgList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgList.Columns.AddRange(new DataGridViewColumn[] { index, BookName, WriterName, IsAvalible });
-            dgList.Location = new Point(17, 161);
-            dgList.Name = "dgList";
-            dgList.ReadOnly = true;
-            dgList.RowHeadersWidth = 62;
-            dgList.RowTemplate.Height = 33;
-            dgList.Size = new Size(706, 249);
-            dgList.TabIndex = 0;
+            dgBookList.AllowUserToAddRows = false;
+            dgBookList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgBookList.Columns.AddRange(new DataGridViewColumn[] { index, BookName, WriterName, IsAvalible });
+            dgBookList.Location = new Point(17, 161);
+            dgBookList.Name = "dgBookList";
+            dgBookList.ReadOnly = true;
+            dgBookList.RowHeadersWidth = 62;
+            dgBookList.RowTemplate.Height = 33;
+            dgBookList.Size = new Size(706, 249);
+            dgBookList.TabIndex = 0;
             // 
             // index
             // 
@@ -119,11 +119,11 @@
             // gbCreated
             // 
             gbCreated.Controls.Add(label2);
-            gbCreated.Controls.Add(dgList);
+            gbCreated.Controls.Add(dgBookList);
             gbCreated.Controls.Add(label1);
             gbCreated.Controls.Add(txtCreatedWriter);
             gbCreated.Controls.Add(txtCreatedBook);
-            gbCreated.Controls.Add(btnCreate);
+            gbCreated.Controls.Add(btnCreateBook);
             gbCreated.Location = new Point(45, 64);
             gbCreated.Name = "gbCreated";
             gbCreated.Size = new Size(755, 427);
@@ -163,15 +163,15 @@
             txtCreatedBook.Size = new Size(441, 31);
             txtCreatedBook.TabIndex = 3;
             // 
-            // btnCreate
+            // btnCreateBook
             // 
-            btnCreate.Location = new Point(568, 30);
-            btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(164, 91);
-            btnCreate.TabIndex = 0;
-            btnCreate.Text = "Ekle";
-            btnCreate.UseVisualStyleBackColor = true;
-            btnCreate.Click += btnCreate_Click;
+            btnCreateBook.Location = new Point(568, 30);
+            btnCreateBook.Name = "btnCreateBook";
+            btnCreateBook.Size = new Size(164, 91);
+            btnCreateBook.TabIndex = 0;
+            btnCreateBook.Text = "Ekle";
+            btnCreateBook.UseVisualStyleBackColor = true;
+            btnCreateBook.Click += btnCreateBook_Click;
             // 
             // groupBox2
             // 
@@ -258,9 +258,9 @@
             gbMember.Controls.Add(txtPhoneNumber);
             gbMember.Controls.Add(txtAdress);
             gbMember.Controls.Add(txtMemberName);
-            gbMember.Controls.Add(dgMember);
+            gbMember.Controls.Add(dgMemberList);
             gbMember.Controls.Add(btnEdit);
-            gbMember.Controls.Add(button2);
+            gbMember.Controls.Add(btnDelete);
             gbMember.Location = new Point(45, 497);
             gbMember.Name = "gbMember";
             gbMember.Size = new Size(755, 503);
@@ -323,20 +323,21 @@
             txtMemberName.Size = new Size(322, 31);
             txtMemberName.TabIndex = 7;
             // 
-            // dgMember
+            // dgMemberList
             // 
-            dgMember.AllowUserToAddRows = false;
-            dgMember.AllowUserToResizeRows = false;
-            dgMember.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgMember.Columns.AddRange(new DataGridViewColumn[] { index2, MemberName, PhoneNumber, Adress });
-            dgMember.Location = new Point(26, 181);
-            dgMember.Name = "dgMember";
-            dgMember.ReadOnly = true;
-            dgMember.RowHeadersWidth = 62;
-            dgMember.RowTemplate.Height = 33;
-            dgMember.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            dgMember.Size = new Size(706, 225);
-            dgMember.TabIndex = 6;
+            dgMemberList.AllowUserToAddRows = false;
+            dgMemberList.AllowUserToResizeRows = false;
+            dgMemberList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgMemberList.Columns.AddRange(new DataGridViewColumn[] { index2, MemberName, PhoneNumber, Adress });
+            dgMemberList.Location = new Point(26, 181);
+            dgMemberList.Name = "dgMemberList";
+            dgMemberList.ReadOnly = true;
+            dgMemberList.RowHeadersWidth = 62;
+            dgMemberList.RowTemplate.Height = 33;
+            dgMemberList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgMemberList.Size = new Size(706, 225);
+            dgMemberList.TabIndex = 6;
+            dgMemberList.SelectionChanged += dgMemberList_SelectionChanged;
             // 
             // index2
             // 
@@ -380,15 +381,15 @@
             btnEdit.UseVisualStyleBackColor = true;
             btnEdit.Click += btnEdit_Click;
             // 
-            // button2
+            // btnDelete
             // 
-            button2.Location = new Point(142, 432);
-            button2.Name = "button2";
-            button2.Size = new Size(164, 65);
-            button2.TabIndex = 4;
-            button2.Text = "Sil";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnDelete.Location = new Point(142, 432);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(164, 65);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Sil";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // Form1
             // 
@@ -401,28 +402,28 @@
             Controls.Add(gbCreated);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dgList).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgBookList).EndInit();
             gbCreated.ResumeLayout(false);
             gbCreated.PerformLayout();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             gbMember.ResumeLayout(false);
             gbMember.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgMember).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgMemberList).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dgList;
+        private DataGridView dgBookList;
         private GroupBox gbCreated;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private GroupBox gbMember;
         private Button btnEdit;
-        private Button button2;
+        private Button btnDelete;
         private TextBox txtCreatedBook;
-        private Button btnCreate;
+        private Button btnCreateBook;
         private DataGridViewTextBoxColumn index;
         private DataGridViewTextBoxColumn BookName;
         private DataGridViewTextBoxColumn WriterName;
@@ -437,7 +438,7 @@
         private DataGridViewTextBoxColumn Member;
         private DataGridViewTextBoxColumn LendingDate;
         private DataGridViewTextBoxColumn DueDate;
-        private DataGridView dgMember;
+        private DataGridView dgMemberList;
         private Label label6;
         private Label label5;
         private Label label4;

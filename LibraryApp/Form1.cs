@@ -7,11 +7,11 @@ namespace LibraryApp
             InitializeComponent();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void btnCreateBook_Click(object sender, EventArgs e)
         {
             if (!(txtCreatedBook.Text == "" || txtCreatedWriter.Text == ""))
             {
-                dgList.Rows.Add(dgList.Rows.Count + 1, txtCreatedBook.Text, txtCreatedWriter.Text, true);
+                dgBookList.Rows.Add(dgBookList.Rows.Count + 1, txtCreatedBook.Text, txtCreatedWriter.Text, true);
                 txtCreatedBook.Text = "";
                 txtCreatedWriter.Text = "";
             }
@@ -23,9 +23,10 @@ namespace LibraryApp
 
         private void btnMemberCreate_Click(object sender, EventArgs e)
         {
+            dataGridView1.ClearSelection();
             if (!(txtMemberName.Text == "" || txtPhoneNumber.Text == "" || txtAdress.Text == ""))
             {
-                dgMember.Rows.Add(dgMember.Rows.Count + 1, txtMemberName.Text, txtPhoneNumber.Text, txtAdress.Text);
+                dgMemberList.Rows.Add(dgMemberList.Rows.Count + 1, txtMemberName.Text, txtPhoneNumber.Text, txtAdress.Text);
                 txtMemberName.Text = "";
                 txtPhoneNumber.Text = "";
                 txtAdress.Text = "";
@@ -36,11 +37,18 @@ namespace LibraryApp
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgMember.Rows)
+            if (dgMemberList.SelectedRows != null)
             {
-                dgMember.Rows.RemoveAt(row.Index);
+                foreach (DataGridViewRow row in dgMemberList.SelectedRows)
+                {
+                    dgMemberList.Rows.RemoveAt(row.Index);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Silmek Ýstediðiniz Üye Satýrýný Seçiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -48,14 +56,19 @@ namespace LibraryApp
         {
             if (btnEdit.Text == "Düzenle")
             {
-                dgMember.ReadOnly = false;
+                dgMemberList.ReadOnly = false;
                 btnEdit.Text = "Düzenlemeyi Tamamla!";
             }
             else
             {
-                dgMember.ReadOnly = true;
+                dgMemberList.ReadOnly = true;
                 btnEdit.Text = "Düzenle";
             }
+        }
+
+        private void dgMemberList_SelectionChanged(object sender, EventArgs e)
+        {
+            dgMemberList.ClearSelection();
         }
     }
 }
