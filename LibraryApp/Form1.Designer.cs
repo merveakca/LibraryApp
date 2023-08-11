@@ -38,7 +38,7 @@
             label1 = new Label();
             txtCreatedWriter = new TextBox();
             txtCreatedBook = new TextBox();
-            btnCreated = new Button();
+            btnCreate = new Button();
             groupBox2 = new GroupBox();
             dataGridView1 = new DataGridView();
             Index1 = new DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             label3 = new Label();
             groupBox3 = new GroupBox();
             gbMember = new GroupBox();
-            btnMemberCreat = new Button();
+            btnMemberCreate = new Button();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -123,7 +123,7 @@
             gbCreated.Controls.Add(label1);
             gbCreated.Controls.Add(txtCreatedWriter);
             gbCreated.Controls.Add(txtCreatedBook);
-            gbCreated.Controls.Add(btnCreated);
+            gbCreated.Controls.Add(btnCreate);
             gbCreated.Location = new Point(45, 64);
             gbCreated.Name = "gbCreated";
             gbCreated.Size = new Size(755, 427);
@@ -163,15 +163,15 @@
             txtCreatedBook.Size = new Size(441, 31);
             txtCreatedBook.TabIndex = 3;
             // 
-            // btnCreated
+            // btnCreate
             // 
-            btnCreated.Location = new Point(568, 30);
-            btnCreated.Name = "btnCreated";
-            btnCreated.Size = new Size(164, 91);
-            btnCreated.TabIndex = 0;
-            btnCreated.Text = "Ekle";
-            btnCreated.UseVisualStyleBackColor = true;
-            btnCreated.Click += btnCreated_Click;
+            btnCreate.Location = new Point(568, 30);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(164, 91);
+            btnCreate.TabIndex = 0;
+            btnCreate.Text = "Ekle";
+            btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += btnCreate_Click;
             // 
             // groupBox2
             // 
@@ -251,7 +251,7 @@
             // 
             // gbMember
             // 
-            gbMember.Controls.Add(btnMemberCreat);
+            gbMember.Controls.Add(btnMemberCreate);
             gbMember.Controls.Add(label6);
             gbMember.Controls.Add(label5);
             gbMember.Controls.Add(label4);
@@ -268,15 +268,15 @@
             gbMember.TabStop = false;
             gbMember.Text = " ";
             // 
-            // btnMemberCreat
+            // btnMemberCreate
             // 
-            btnMemberCreat.Location = new Point(568, 47);
-            btnMemberCreat.Name = "btnMemberCreat";
-            btnMemberCreat.Size = new Size(112, 113);
-            btnMemberCreat.TabIndex = 14;
-            btnMemberCreat.Text = "Ekle";
-            btnMemberCreat.UseVisualStyleBackColor = true;
-            btnMemberCreat.Click += btnMemberCreat_Click;
+            btnMemberCreate.Location = new Point(568, 47);
+            btnMemberCreate.Name = "btnMemberCreate";
+            btnMemberCreate.Size = new Size(112, 113);
+            btnMemberCreate.TabIndex = 14;
+            btnMemberCreate.Text = "Ekle";
+            btnMemberCreate.UseVisualStyleBackColor = true;
+            btnMemberCreate.Click += btnMemberCreate_Click;
             // 
             // label6
             // 
@@ -422,7 +422,7 @@
         private Button btnEdit;
         private Button button2;
         private TextBox txtCreatedBook;
-        private Button btnCreated;
+        private Button btnCreate;
         private DataGridViewTextBoxColumn index;
         private DataGridViewTextBoxColumn BookName;
         private DataGridViewTextBoxColumn WriterName;
@@ -448,6 +448,6 @@
         private DataGridViewTextBoxColumn MemberName;
         private DataGridViewTextBoxColumn PhoneNumber;
         private DataGridViewTextBoxColumn Adress;
-        private Button btnMemberCreat;
+        private Button btnMemberCreate;
     }
 }

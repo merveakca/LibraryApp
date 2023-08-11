@@ -7,7 +7,7 @@ namespace LibraryApp
             InitializeComponent();
         }
 
-        private void btnCreated_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
             if (!(txtCreatedBook.Text == "" || txtCreatedWriter.Text == ""))
             {
@@ -22,7 +22,7 @@ namespace LibraryApp
 
         }
 
-        private void btnMemberCreat_Click(object sender, EventArgs e)
+        private void btnMemberCreate_Click(object sender, EventArgs e)
         {
             if (!(txtMemberName.Text == "" || txtPhoneNumber.Text == "" || txtAdress.Text == ""))
             {
@@ -33,7 +33,7 @@ namespace LibraryApp
             }
             else
             {
-                MessageBox.Show("Yazar ve Kitap adý boþ býrakýlamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Üye Bilgileri Boþ Geçilemez", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -47,20 +47,17 @@ namespace LibraryApp
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgMember.SelectedRows != null)
+            if (btnEdit.Text == "Düzenle")
             {
-                foreach (DataGridViewRow row in dgMember.Rows)
-                {
-                    row.ReadOnly = true;
-                }
+                dgMember.ReadOnly = false;
                 btnEdit.Text = "Düzenlemeyi Tamamla!";
             }
             else
             {
-                MessageBox.Show("Düzenlemek istediðin satýrý seçmedin", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dgMember.ReadOnly = true;
+                btnEdit.Text = "Düzenle";
             }
-            dgMember.ReadOnly = false;
-            btnEdit.Text = "Düzenle";
+           
         }
     }
 }
